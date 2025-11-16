@@ -47,15 +47,10 @@ namespace InstaGridPoster
             var argsJoin = $@"{Input} {FilterComplex} ""{filterArgs}"" {mapArgs}";
             return argsJoin;
         }
-        public FfmpegArgumentsBuilder(string input, string pathToSaveResult = "")
+        public FfmpegArgumentsBuilder(string input, string pathToSaveResult)
         {
             _input = input;
-            if (pathToSaveResult == "") pathToSaveResult = Path.GetDirectoryName(input)!;
-            else
-                pathToSaveResult.Trim('"');
-            {
-                if(!Path.Exists(pathToSaveResult)) Directory.CreateDirectory(pathToSaveResult);
-            }
+            if (string.IsNullOrEmpty(pathToSaveResult)) pathToSaveResult = Path.GetDirectoryName(input)!;
                 PathToSaveResult = pathToSaveResult;
         } 
     }
