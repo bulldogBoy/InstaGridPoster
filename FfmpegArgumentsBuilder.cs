@@ -25,7 +25,7 @@ namespace InstaGridPoster
             string result = "";
             for (int i = 0; i < ImageMatrixRender.Count; i++)
             {
-                var temp = $@"{FirstStream}{Crop}={ImageMatrixRender[i]};";
+                var temp = $@"{FirstStream}{Crop}={ImageMatrixRender[i]} [out{i}];";
                 result += temp;
             }
             return result;
